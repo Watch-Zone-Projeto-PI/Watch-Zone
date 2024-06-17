@@ -57,11 +57,7 @@ Professor Bruno Henrique de Paula Ferreira
         - [Diagrama de caso de uso](#diagrama-de-caso-de-uso)
         - [Diagrama de classes](#diagrama-de-classes)
         - [Diagrama de sequência](#diagrama-de-sequência)
-4. [Testes e Qualidade](#4-testes-e-qualidade)
-    - [Estratégia de Testes](#41-estratégia-de-testes)
-    - [Resultados dos Testes](#42-resultados-dos-testes)
-    - [Garantia da Qualidade](#43-garantia-da-qualidade)
-5. [Considerações Finais](#5-considerações-finais)
+4. [Considerações Finais](#5-considerações-finais)
     - [Conclusão](#conclusão)
     - [Contribuições Individuais](#contribuições-individuais)
 
@@ -146,17 +142,7 @@ Foi utilizado no projeto o modelo cascata. O modelo cascata é uma abordagem tra
 
 ---
 
-## 4. Testes e Qualidade
-### 4.1 Estratégia de Testes
-Descrever a estratégia de testes adotada.
-### 4.2 Resultados dos Testes
-Apresentar os resultados dos testes realizados.
-### 4.3 Garantia da Qualidade
-Descrever as práticas adotadas para garantia da qualidade.
-
----
-
-## 5. Considerações Finais
+## 4. Considerações Finais
 ### Conclusão
 O projeto WatchZone representa uma abordagem inovadora e eficaz para o controle da dengue, integrando tecnologia e dados para fornecer soluções tangíveis e práticas. Ao desenvolver este software, visamos não apenas fornecer ferramentas para monitorar e analisar casos de dengue, mas também capacitar as comunidades e autoridades de saúde a agir proativamente na prevenção e controle da doença. Através do uso de análise de dados, login para funcionários públicos e usuários, e um dashboard de controle intuitivo, o WatchZone busca facilitar a colaboração e promover uma resposta coordenada e eficaz contra a dengue. Com um compromisso contínuo com a melhoria e a adaptação às necessidades em constante evolução, acreditamos que o WatchZone pode desempenhar um papel significativo na redução da incidência de dengue e na proteção da saúde pública.
 
