@@ -104,9 +104,8 @@ O escopo do sistema inclui:
 - **Análise de Documentos:** Analisar documentos existentes, como relatórios de vigilância epidemiológica, registros de casos de dengue e planos de controle de vetores, para identificar lacunas de informação e requisitos para o WatchZone.
 
 ### 2.3 Requisitos funcionais
-- Permitir que usuários se registrem na aplicação.
 - Possibilidade de login e logout de usuários.
-- Níveis de permissão para diferentes tipos de usuários (administradores, profissionais de saúde, público geral).
+- Tipos de usuários (profissionais de saúde e Médicos).
 
 ### 2.4 Requisitos não funcionais
 - Interface intuitiva e fácil de usar.
