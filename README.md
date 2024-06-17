@@ -40,36 +40,28 @@ Professor Bruno Henrique de Paula Ferreira
 
 ## Sumário
 
-1. [Apresentação da Empresa](#apresentação-da-empresa)
-    - [Missão](#missão)
-    - [Visão](#visão)
-    - [Valores](#valores)
-    - [Link Repositório](#link-repositório)
-2. [Escopo do sistema](#escopo-do-sistema)
-    - [Objetivos do projeto](#objetivos-do-projeto)
-    - [Técnica de levantamento de requisitos](#técnica-de-levantamento-de-requisitos)
-    - [Requisitos funcionais](#requisitos-funcionais)
-    - [Requisitos não funcionais](#requisitos-não-funcionais)
-    - [Cronograma](#cronograma)
-3. [Documentação do Sistema](#documentação-do-sistema)
-    - [Metodologia de Desenvolvimento](#metodologia-de-desenvolvimento)
-    - [Diagramas UML](#diagramas-uml)
+1. [Apresentação da Empresa](#1-apresentação-da-empresa)
+    - [Missão](#11-missão)
+    - [Visão](#12-visão)
+    - [Valores](#13-valores)
+    - [Link Repositório](#14-link-repositório)
+2. [Escopo do sistema](#2-escopo-do-sistema)
+    - [Objetivos do projeto](#21-objetivos-do-projeto)
+    - [Técnica de levantamento de requisitos](#22-técnica-de-levantamento-de-requisitos)
+    - [Requisitos funcionais](#23-requisitos-funcionais)
+    - [Requisitos não funcionais](#24-requisitos-não-funcionais)
+    - [Cronograma](#25-cronograma)
+3. [Documentação do Sistema](#3-documentação-do-sistema)
+    - [Metodologia de Desenvolvimento](#31-metodologia-de-desenvolvimento)
+    - [Diagramas UML](#32-diagramas-uml)
         - [Diagrama de caso de uso](#diagrama-de-caso-de-uso)
         - [Diagrama de classes](#diagrama-de-classes)
         - [Diagrama de sequência](#diagrama-de-sequência)
-    - [Modelo Conceitual](#modelo-conceitual)
-    - [Modelo lógico](#modelo-lógico)
-    - [Modelo Físico](#modelo-físico)
-    - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-    - [Interface do usuário](#interface-do-usuário)
-    - [Funcionalidades Implementadas](#funcionalidades-implementadas)
-4. [Testes e Qualidade](#testes-e-qualidade)
-    - [Estratégia de Testes](#estratégia-de-testes)
-    - [Resultados dos Testes](#resultados-dos-testes)
-    - [Garantia da Qualidade](#garantia-da-qualidade)
-    - [Requisitos mínimos de hardware e software para o sistema](#requisitos-mínimos-de-hardware-e-software-para-o-sistema)
-    - [Contrato para desenvolvimento de software](#contrato-para-desenvolvimento-de-software)
-5. [Considerações Finais](#considerações-finais)
+4. [Testes e Qualidade](#4-testes-e-qualidade)
+    - [Estratégia de Testes](#41-estratégia-de-testes)
+    - [Resultados dos Testes](#42-resultados-dos-testes)
+    - [Garantia da Qualidade](#43-garantia-da-qualidade)
+5. [Considerações Finais](#5-considerações-finais)
     - [Conclusão](#conclusão)
     - [Contribuições Individuais](#contribuições-individuais)
 
@@ -161,8 +153,6 @@ Descrever a estratégia de testes adotada.
 Apresentar os resultados dos testes realizados.
 ### 4.3 Garantia da Qualidade
 Descrever as práticas adotadas para garantia da qualidade.
-### 4.4 Requisitos mínimos de hardware e software para o sistema
-### 4.5 Contrato para desenvolvimento de software
 
 ---
 
@@ -173,4 +163,4 @@ O projeto WatchZone representa uma abordagem inovadora e eficaz para o controle 
 ### Contribuições Individuais
 - **Giovanny:** Responsável pela documentação
 - **Marco e Cristian:** Desenvolvimento do software
-- **Cristian e Josias:** Criação dos diagramas
+- **Christian e Josias:** Criação dos diagramas
