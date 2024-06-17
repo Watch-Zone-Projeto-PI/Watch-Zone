@@ -1,3 +1,37 @@
+<?php
+class Home {
+    private $db_host = 'localhost';
+    private $db_user = 'root';
+    private $db_password = '';
+    private $db_name = 'watchzone';
+    private $pdo;
+
+    public function __construct() {
+        $this->pdo = new PDO("mysql:host=$this->db_host;dbname=$this->db_name", $this->db_user, $this->db_password);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function verificarLogin() {
+        if (!isset($_SESSION['user'])) {
+            header("Location: login.php");
+            exit;
+        }
+    }
+
+    public function obterInfectados() {
+        $sql = "SELECT COUNT(*) AS total_infectados FROM paciente";
+        $stmt = $this->pdo->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['total_infectados'];
+    }
+}
+
+
+$home = new Home();
+$home->verificarLogin();
+$total_infectados = $home->obterInfectados();
+?>
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -6,22 +40,23 @@
 <!-- Content Row -->
 <div class="row">
 
-    <div class="col-xl-4 col-md-4 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Total Casos</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">4.000</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fa-solid fa-disease fa-2x text-gray-300"></i>
+            <!-- Card Cidade mais Afetada -->
+            <div class="col-xl-4 col-md-4 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Cidade mais afetada</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dados_cidade_afetada['nome_cidade']; ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-disease fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
     <div class="col-xl-4 col-md-4 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
@@ -51,14 +86,15 @@
         </div>
     </div>
 
+    <!-- Infectados -->
     <div class="col-xl-4 col-md-4 mb-4">
         <div class="card border-left-danger shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                            Mortos</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            Infectados</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_infectados; ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-skull-crossbones fa-2x text-gray-300"></i>
@@ -67,6 +103,8 @@
             </div>
         </div>
     </div>
+    <!-- Fim Infectados -->
+
 </div>
 
 <!-- Content Row -->
@@ -78,7 +116,7 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Cidades mais afetados</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Cidades mais afetadas</h6>
             </div>
             
             <!-- Card Body -->
