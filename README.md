@@ -88,9 +88,9 @@ A estratégia de implementação delineada neste documento visa introduzir gradu
 
 O escopo do sistema inclui:
 - Análise de dados através de gráficos.
-- Login para funcionários públicos.
-- Login para usuários.
-- Dashboard de controle.
+- Login para Médicos e Agentes de Saúde.
+- Dashboard de controle interno.
+- Gerenciamento de Pacientes cadastrados.
 
 ### 2.1 Objetivos do projeto
 - Controle de dengue de forma visual e interativa.
