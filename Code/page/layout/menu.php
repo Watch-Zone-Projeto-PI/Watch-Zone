@@ -3,10 +3,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?page=home">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fa-solid fa-mosquito"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Watch Zone </div>
+    <div class="sidebar-brand-text mx-3">Watch Zone </div>
     </a>
 
     <!-- Divider -->

@@ -19,16 +19,16 @@ class Cadastro {
         }
     }
 
-    public function cadastrarPaciente($nome, $cpf, $cidade, $bairro) {
+    public function cadastrarPaciente($nome, $cpf, $idade, $cidade, $bairro) {
         try {
-            $sql = "INSERT INTO paciente (nome, cpf, cidade, bairro, cpf_agente, cpf_medico) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO paciente (nome, cpf, idade, cidade, bairro, cpf_agente, cpf_medico) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->pdo->prepare($sql);
             $cpf_usuario = $_SESSION['cpf_crm'];
             $tipo_usuario = $_SESSION['tipo'];
             if ($tipo_usuario === 'agente') {
-                $stmt->execute([$nome, $cpf, $cidade, $bairro, $cpf_usuario, null]);
+                $stmt->execute([$nome, $cpf, $idade, $cidade, $bairro, $cpf_usuario, null]);
             } elseif ($tipo_usuario === 'medico') {
-                $stmt->execute([$nome, $cpf, $cidade, $bairro, null, $cpf_usuario]);
+                $stmt->execute([$nome, $cpf, $idade, $cidade, $bairro, null, $cpf_usuario]);
             }
             $_SESSION['message'] = "Paciente cadastrado com sucesso!";
         } catch (PDOException $e) {
@@ -47,10 +47,11 @@ $cadastro->verificarAutenticacao();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $cpf = isset($_POST['cpf']) ? $cadastro->limparCPF($_POST['cpf']) : null;
+    $idade = $_POST['idade'];
     $cidade = $_POST['cidade'];
     $bairro = $_POST['bairro'];
 
-    $cadastro->cadastrarPaciente($nome, $cpf, $cidade, $bairro);
+    $cadastro->cadastrarPaciente($nome, $cpf, $idade, $cidade, $bairro);
 }
 ?>
 
@@ -83,6 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="mb-3">
                                 <label for="cpf" class="form-label">CPF</label>
                                 <input type="text" class="form-control" id="cpf" name="cpf">
+                            </div>
+                            <div class="mb-3">
+                                <label for="idade" class="form-label">Idade</label>
+                                <input type="number" class="form-control" id="idade" name="idade" required>
                             </div>
                             <div class="mb-3">
                                 <label for="cidade" class="form-label">Cidade</label>

@@ -41,6 +41,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Idade</th>
                     <th>Cidade</th>
                     <th>Bairro</th>
                     <th>Responsável pelo cadastro</th>
@@ -51,6 +52,7 @@
                 echo "<tr>
                         <td>{$row['nome']}</td>
                         <td>{$row['cpf']}</td>
+                        <td>{$row['idade']}</td>
                         <td>{$row['cidade']}</td>
                         <td>{$row['bairro']}</td>
                         <td>{$row['responsavel']}</td>
