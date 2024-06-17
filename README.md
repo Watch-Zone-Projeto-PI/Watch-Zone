@@ -162,5 +162,5 @@ O projeto WatchZone representa uma abordagem inovadora e eficaz para o controle 
 
 ### Contribuições Individuais
 - **Giovanny:** Responsável pela documentação
-- **Marco e Cristian:** Desenvolvimento do software
+- **Marco e Christian:** Desenvolvimento do software
 - **Christian e Josias:** Criação dos diagramas
