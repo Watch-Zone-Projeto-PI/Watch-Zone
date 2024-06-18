@@ -1,8 +1,32 @@
 <?php
+session_start();
 
-$page = $_GET['page'] ? $_GET['page'] : 'home';
-$file = $page.'.php';
+class IndexPage {
+    public function verificarAutenticacao() {
+        if (!isset($_SESSION['cpf_crm'])) {
+            header("Location: login.php");
+            exit;
+        }
+    }
 
+    public function incluirConteudo() {
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+            $file = $page . '.php';
+
+            if (file_exists($file)) {
+                include $file;
+            } else {
+                include '404.php';
+            }
+        } else {
+            include 'home.php';
+        }
+    }
+}
+
+$indexPage = new IndexPage();
+$indexPage->verificarAutenticacao();
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +44,7 @@ $file = $page.'.php';
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -49,19 +71,6 @@ $file = $page.'.php';
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-info" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -94,7 +103,7 @@ $file = $page.'.php';
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Nome do Usuário'; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="../img/undraw_profile.svg">
                             </a>
@@ -129,15 +138,10 @@ $file = $page.'.php';
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <?php 
-                    
-                        if (file_exists($file)) {
-                            include $file;
-                        } else {
-                            include '404.php';
-                        }
-                    
-                    ?>
+                <?php
+                $indexPage->incluirConteudo();
+                ?>
+
 
                 </div>
                 <!-- /.container-fluid -->
